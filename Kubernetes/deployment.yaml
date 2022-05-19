@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: order-management-ctse
+spec:
+  selector:
+    matchLabels:
+      app: order-management-ctse
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: order-management-ctse
+    spec:
+      containers:
+        - name: order-management-ctse
+          image: lahirusanjeewa2971/order-management-ctse
+          ports:
+            - containerPort: 3000
